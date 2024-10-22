@@ -129,14 +129,6 @@ while True:
         result=face_mesh.process(frame)
         if result.multi_face_landmarks:
             for facial_landmark in result.multi_face_landmarks:
-                #draw landmark on face
-                mp_drawing.draw_landmarks(
-                    frame,
-                    facial_landmark,
-                    connections = mp_face_mesh.FACEMESH_TESSELATION,#FACEMESH_CONTOURS
-                    landmark_drawing_spec=None,
-                    connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_tesselation_style()
-                )
                 #check the distance per frame
                 ids=lEyeIndex
                 distanceValueLEye = distanceValueLEye + valueDistance(facial_landmark,ids[0],ids[1],ids[2],ids[3],frame.shape[0],frame.shape[1])
@@ -170,12 +162,12 @@ while True:
                             task=0
 
 
-                    lEye, ok2= changeModeDetect(lEye,distanceValueLEye/frameDelay ,0.08,0.2)
+                    lEye, ok2= changeModeDetect(lEye,distanceValueLEye/frameDelay ,0.08,0.16)
                     av1=distanceValueLEye/frameDelay
                     distanceValueLEye=0
 
 
-                    rEye, ok3= changeModeDetect(rEye,distanceValueREye/frameDelay ,0.08,0.2)
+                    rEye, ok3= changeModeDetect(rEye,distanceValueREye/frameDelay ,0.08,0.16)
                     av2=distanceValueREye/frameDelay
                     distanceValueREye=0
 
