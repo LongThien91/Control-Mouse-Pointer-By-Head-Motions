@@ -14,7 +14,7 @@ pip install -r requirements.txt
 py HMCP.py
 ```
 ## How to use
-This project contains 4 mode:  
+This project contains 3 mode:  
 Mode 1: Move and click the mouse cursor     
 ![Demo1](DemoGif/DemoMode1.gif)
 
